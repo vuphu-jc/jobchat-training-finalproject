@@ -1,7 +1,8 @@
-package com.example.minijobchat
+package com.example.minijobchat.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.minijobchat.R
 
 class MainActivity : AppCompatActivity() {
 
