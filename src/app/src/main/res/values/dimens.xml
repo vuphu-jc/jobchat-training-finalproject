@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_1">1dp</dimen>
+    <dimen name="small_2">4dp</dimen>
+    <dimen name="small_3">7dp</dimen>
+    <dimen name="small_4">10dp</dimen>
+    <dimen name="small_5">13dp</dimen>
+
+    <dimen name="normal_1">15dp</dimen>
+    <dimen name="normal_2">20dp</dimen>
+    <dimen name="normal_3">25dp</dimen>
+    <dimen name="normal_4">30dp</dimen>
+    <dimen name="normal_5">35dp</dimen>
+    <dimen name="normal_6">40dp</dimen>
+    <dimen name="normal_7">45dp</dimen>
+    <dimen name="normal_8">50dp</dimen>
+    <dimen name="normal_9">55dp</dimen>
+    <dimen name="normal_10">60dp</dimen>
+    <dimen name="normal_11">65dp</dimen>
+    <dimen name="normal_12">70dp</dimen>
+
+    <dimen name="large_1">80dp</dimen>
+    <dimen name="large_2">90dp</dimen>
+    <dimen name="large_3">100dp</dimen>
+    <dimen name="large_4">110dp</dimen>
+    <dimen name="large_5">120dp</dimen>
+    <dimen name="large_6">130dp</dimen>
+    <dimen name="large_7">140dp</dimen>
+    <dimen name="large_8">150dp</dimen>
+    <dimen name="large_9">160dp</dimen>
+    <dimen name="large_10">170dp</dimen>
+    <dimen name="large_11">180dp</dimen>
+    <dimen name="large_12">190dp</dimen>
+
+    <dimen name="huge_1">200dp</dimen>
+    <dimen name="huge_2">220dp</dimen>
+    <dimen name="huge_3">240dp</dimen>
+    <dimen name="huge_4">260dp</dimen>
+    <dimen name="huge_5">280dp</dimen>
+    <dimen name="huge_6">300dp</dimen>
+    <dimen name="huge_7">320dp</dimen>
+    <dimen name="huge_8">340dp</dimen>
+    <dimen name="huge_9">360dp</dimen>
+    <dimen name="huge_10">380dp</dimen>
+    <dimen name="huge_11">400dp</dimen>
+    <dimen name="huge_12">420dp</dimen>
+</resources>
