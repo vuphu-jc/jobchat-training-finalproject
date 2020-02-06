@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "272200097825",
+    "firebase_url": "https://mini-jobchat.firebaseio.com",
+    "project_id": "mini-jobchat",
+    "storage_bucket": "mini-jobchat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272200097825:android:5bfd943123591edd3d8360",
+        "android_client_info": {
+          "package_name": "com.example.minijobchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "272200097825-1voum89rjjcb7n0l2bmhddgr95gnrrba.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.minijobchat",
+            "certificate_hash": "e496bf201f0aa90e3be86690286734512708e089"
+          }
+        },
+        {
+          "client_id": "272200097825-4sm9der8pv2a44dr6iqak8nh57cml4gc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyACdfUb97e6M80giuT04NIKbdIFMTUjRJw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "272200097825-4sm9der8pv2a44dr6iqak8nh57cml4gc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
