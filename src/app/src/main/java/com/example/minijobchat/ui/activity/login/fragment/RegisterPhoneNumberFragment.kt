@@ -28,6 +28,15 @@ class RegisterPhoneNumberFragment : Fragment() {
     var activityFragment: LoginActivityFragment? = null
     lateinit var phoneNumber: String
 
+    companion object {
+        fun newInstance(activityFragment: LoginActivityFragment, phoneNumber: String): RegisterPhoneNumberFragment {
+            return RegisterPhoneNumberFragment().apply {
+                this.activityFragment = activityFragment
+                this.phoneNumber = phoneNumber
+            }
+        }
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

@@ -11,6 +11,7 @@ import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import com.example.minijobchat.R
+import com.example.minijobchat.model.dto.User
 import com.example.minijobchat.ui.activity.login.LoginActivityFragment
 import com.example.minijobchat.utils.StringUtils
 import com.example.minijobchat.utils.extension.hideKeyboard
@@ -23,7 +24,15 @@ import kotlinx.android.synthetic.main.fragment_submit_username.*
 class SubmitUsernameFragment : Fragment() {
 
     var activityFragment: LoginActivityFragment? = null
-    lateinit var countryPicker: CountryCodePicker
+    private lateinit var countryPicker: CountryCodePicker
+
+    companion object {
+        fun newInstance(activityFragment: LoginActivityFragment): SubmitUsernameFragment {
+            return SubmitUsernameFragment().apply {
+                this.activityFragment = activityFragment
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

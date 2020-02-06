@@ -16,8 +16,17 @@ import kotlinx.android.synthetic.main.view_register.*
  */
 class RegisterEmailFragment : Fragment() {
 
-    var activityFragment: LoginActivityFragment? = null
-    lateinit var email: String
+    private var activityFragment: LoginActivityFragment? = null
+    private lateinit var email: String
+
+    companion object {
+        fun newInstance(activityFragment: LoginActivityFragment, email: String): RegisterEmailFragment {
+            return RegisterEmailFragment().apply {
+                this.activityFragment = activityFragment
+                this.email = email
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

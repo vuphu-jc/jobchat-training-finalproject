@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.amulyakhare.textdrawable.TextDrawable
 import com.example.minijobchat.R
-import com.example.minijobchat.model.dto.UserInformation
+import com.example.minijobchat.model.dto.User
 import com.example.minijobchat.ui.activity.login.LoginActivityFragment
 import com.example.minijobchat.utils.extension.hideKeyboard
 import com.example.minijobchat.utils.extension.showKeyboard
@@ -25,9 +25,18 @@ import kotlinx.android.synthetic.main.fragment_submit_login.*
 class SubmitLoginFragment : Fragment() {
 
     var activityFragment: LoginActivityFragment? = null
-    lateinit var userInformation: UserInformation
+    lateinit var user: User
     private val DELAY_TIME: Long = 200
     private val AT_LEAST_CHARACTER = 6
+
+    companion object {
+        fun newInstance(activityFragment: LoginActivityFragment, user: User): SubmitLoginFragment {
+            return SubmitLoginFragment().apply {
+                this.activityFragment = activityFragment
+                this.user = user
+            }
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,7 +45,7 @@ class SubmitLoginFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_submit_login, null, false);
     }
 
-    fun createTextDrawable(view: View, char: String): TextDrawable {
+    private fun createTextDrawable(view: View, char: String): TextDrawable {
         var bgColor = context?.getColor(R.color.colorPrimary)
         if (bgColor == null) bgColor = Color.CYAN
         return TextDrawable.builder()
@@ -53,9 +62,9 @@ class SubmitLoginFragment : Fragment() {
             activity?.hideKeyboard()
             activityFragment?.onBackFragment()
         }
-        usernameTextView.text = userInformation.displayName
-        if (userInformation.photoUrl.isEmpty()) {
-            val drawable = createTextDrawable(view, userInformation.displayName[0].toString())
+        usernameTextView.text = user.displayName
+        if (user.photoUrl.isEmpty()) {
+            val drawable = createTextDrawable(view, user.displayName[0].toString())
             avatarCircleImageView.setImageDrawable(drawable)
         }
 
@@ -70,7 +79,7 @@ class SubmitLoginFragment : Fragment() {
                 errorTextView.text = getString(R.string.error_password_at_least_6_characters)
             } else {
                 activity?.hideKeyboard()
-                activityFragment?.onSubmitLogin(userInformation.email, passwordEditText.text.toString())
+                activityFragment?.onSubmitLogin(user.email, passwordEditText.text.toString())
             }
         }
 
