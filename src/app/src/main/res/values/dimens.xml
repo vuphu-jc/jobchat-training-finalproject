@@ -46,4 +46,5 @@
     <dimen name="huge_12">420dp</dimen>
 
     <dimen name="avatar_size">@dimen/large_1</dimen>
+    <dimen name="header_height">@dimen/normal_7</dimen>
 </resources>

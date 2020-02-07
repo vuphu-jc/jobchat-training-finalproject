@@ -48,4 +48,29 @@
         <item name="android:textStyle">italic</item>
     </style>
 
+    <style name="CircleEffectOnClick" parent="android:Widget">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+    </style>
+
+    <style name="EffectOnClick" parent="android:Widget">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+
+
+    <style name="HomePageTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/normal_3</item>
+    </style>
+
+    <style name="ActionBarTitle" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/normal_2</item>
+    </style>
+
 </resources>

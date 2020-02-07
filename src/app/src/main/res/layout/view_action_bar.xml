@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_height">
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        style="@style/ActionBarTitle"
+        android:text="@string/label_preview" />
+
+    <ImageView
+        android:id="@+id/iconImageView"
+        android:layout_width="@dimen/normal_10"
+        android:layout_height="@dimen/header_height"
+        android:padding="@dimen/small_3"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        style="@style/EffectOnClick" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/small_1"
+        android:background="@color/colorFooterOfHeader"
+        android:layout_alignParentBottom="true" ></View>
+
+</RelativeLayout>

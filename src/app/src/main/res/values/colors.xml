@@ -4,4 +4,7 @@
     <color name="colorPrimaryLight">#79DBD0</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#20AFEE</color>
+    <color name="colorIconStrokeColor">#FF555555</color>
+    <color name="colorSelectedIcon">#78A9E5</color>
+    <color name="colorFooterOfHeader">#55555555</color>
 </resources>
