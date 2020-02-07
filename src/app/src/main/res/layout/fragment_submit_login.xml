@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_hello"
+        android:textSize="@dimen/normal_1" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/normal_1" />
+
+    <TextView
+        android:id="@+id/displayNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/label_preview"
+        android:textSize="@dimen/normal_2" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/small_4" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/avatarCircleImageView"
+        android:layout_width="@dimen/avatar_size"
+        android:layout_height="@dimen/avatar_size"
+        app:civ_border_width="5dp"
+        app:civ_border_color="#FFFFFF" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:passwordToggleEnabled="true"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:hint="@string/hint_input_password" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/errorTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/ErrorTextView"
+        android:layout_marginStart="@dimen/small_5"
+        android:layout_marginTop="@dimen/small_5"
+        android:layout_marginEnd="@dimen/small_5" />
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_login" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_back"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+        <Space
+            android:layout_width="@dimen/normal_2"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/forgetPasswordButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/label_forgot_password"
+            android:layout_weight="1"
+            style="@style/Widget.MaterialComponents.Button.TextButton" />
+
+    </LinearLayout>
+
+</LinearLayout>

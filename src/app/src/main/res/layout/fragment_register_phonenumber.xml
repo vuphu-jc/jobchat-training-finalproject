@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_system_send_code"
+        android:textSize="@dimen/normal_1" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/small_2" />
+
+    <TextView
+        android:id="@+id/phoneNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:text="@string/label_preview"
+        android:textSize="@dimen/normal_2"  />
+
+    <com.mukesh.OtpView
+        android:id="@+id/codesOtpView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:textColor="@android:color/black"
+        app:itemCount="6"
+        app:lineColor="@color/colorPrimary"
+        app:viewType="line"
+        />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/normal_1" />
+
+    <include
+        layout="@layout/view_register" />
+
+</LinearLayout>

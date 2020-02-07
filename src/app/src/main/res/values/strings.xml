@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Mini-JobChat</string>
+    <string name="app_description">Phần mêm quản lý công việc miễn phí!</string>
+
+    <string name="ip_server">192.168.42.171</string>
+
+    <string name="hint_input_email_or_phonenumber">Email hoặc số điện thoại</string>
+    <string name="hint_input_password">Mật khẩu</string>
+    <string name="hint_input_display_name">Tên hiển thị</string>
+
+    <string name="label_preview">PREVIEW</string>
+    <string name="label_hello">Xin chào</string>
+    <string name="label_register_email">Email chưa có tài khoản, vui lòng điền thông tin để đăng ký mới</string>
+    <string name="label_system_send_code">Hệ thống đã gửi mã kích hoạt về</string>
+    <string name="label_login">Đăng nhập</string>
+    <string name="label_register">Đăng kí</string>
+    <string name="label_logout">Đăng xuất</string>
+    <string name="label_forgot_password">Quên mật khẩu</string>
+    <string name="label_back">Trở về</string>
+    <string name="label_next">Tiếp tục</string>
+
+    <string name="error_empty_email_or_phonenumber">Chưa nhập email hoặc số điện thoại</string>
+    <string name="error_invalid_email_or_phonenumber">Địa chỉ email hoặc số điện thoại không hợp lệ</string>
+    <string name="error_password_at_least_6_characters">Mật khẩu ít nhất 6 ký tự</string>
+    
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="label_sign_out">Đăng xuất</string>
 </resources>
