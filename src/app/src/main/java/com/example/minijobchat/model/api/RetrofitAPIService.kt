@@ -6,14 +6,11 @@ import io.reactivex.Observable
 import retrofit2.http.*
 
 interface RetrofitAPIService {
-    @GET("/user-information")
-    fun getUserInformation(@Query("username") username: String): Observable<User?>
+    @Headers("Content-Type: application/json")
+    @POST("user")
+    fun registerUser(@Body jsonContent: HashMap<String,Any>): Completable
 
-    @FormUrlEncoded
-    @POST("register")
-    fun registerUser(@Field("email") email: String,
-                     @Field("displayName") displayName: String,
-                     @Field("phoneNumber") phoneNumber: String,
-                     @Field("password") password: String): Completable
+    @GET("user/{username}")
+    fun getUserInformation(@Path("username") username: String): Observable<User>
 }
 

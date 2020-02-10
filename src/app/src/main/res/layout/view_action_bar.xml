@@ -24,6 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/small_1"
         android:background="@color/colorFooterOfHeader"
-        android:layout_alignParentBottom="true" ></View>
+        android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

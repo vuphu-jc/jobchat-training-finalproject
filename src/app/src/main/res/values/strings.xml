@@ -2,9 +2,9 @@
     <string name="app_name">Mini-JobChat</string>
     <string name="app_description">Phần mêm quản lý công việc miễn phí!</string>
 
-    <string name="ip_server">192.168.42.31</string>
+    <string name="ip_server">192.168.0.9</string>
 
-    <string name="hint_input_email_or_phonenumber">Email hoặc số điện thoại</string>
+    <string name="hint_input_email_or_phone_number">Email hoặc số điện thoại</string>
     <string name="hint_input_password">Mật khẩu</string>
     <string name="hint_input_display_name">Tên hiển thị</string>
 

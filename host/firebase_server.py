@@ -1,57 +1,22 @@
 import firebase_admin
-from firebase_admin import credentials
-from firebase_admin import auth
-from firebase_admin import firestore
+from firebase_admin import credentials, auth, firestore
 import flask
 from flask import request
-import utils
+from exceptions import InvalidUsage
 
 cred = credentials.Certificate('./serviceAccountKey.json')
 firebase_admin.initialize_app(cred)
 app = flask.Flask(__name__)
-db = firestore.client()
+database = firestore.client()
 
-@app.route('/register', methods=['POST'])
-def register():
-    def emptyString(text: str):
-        if len(text) == 0:
-            return None
-        return text
+@app.errorhandler(InvalidUsage)
+def handle_invalid_usage(error):
+    response = flask.jsonify(error.to_dict())
+    response.status_code = error.status_code
+    return response
 
-    email_address = request.values.get('email')
-    display_name = request.values.get('displayName')
-    phone_number = request.values.get('phoneNumber')
-    password = request.values.get('password')
-    auth.create_user(
-        email = emptyString(email_address),
-        display_name = emptyString(display_name),
-        phone_number = emptyString(phone_number),
-        password = emptyString(password),
-        disabled = False,
-    )
-    return flask.jsonify(True)
-
-@app.route('/user-information', methods=['GET'])
-def user_information():
-    email_address = request.args.get('username')
-    return flask.jsonify(get_users(email_address))
-
-def get_users(username):
-    try:
-        user = None
-        if utils.isEmail(username):
-            user = auth.get_user_by_email(username)
-        elif (utils.isPhoneNumber(username)):
-            user = auth.get_user_by_phone_number(username)
-        return {
-            "email": user.email,
-            "displayName": user.display_name,
-            "uid": user.uid,
-            "photoUrl": user.photo_url if user.photo_url != None else "",
-            "phoneNumber": user.phone_number
-            }
-    except:
-        return None
+from route import user_route
+app.register_blueprint(user_route.user_page)
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0',debug=True)

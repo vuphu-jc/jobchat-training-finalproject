@@ -16,7 +16,13 @@ class NetworkConnectionInterceptor(private val context: Context): Interceptor {
         }
 
         val builder: Request.Builder = chain.request().newBuilder()
-        return chain.proceed(builder.build())
+        val res = chain.proceed(builder.build())
+
+        if (res.code() == 204) {
+            throw NoContentException()
+        }
+
+        return res
     }
 
     fun isConnected(): Boolean {
@@ -29,4 +35,9 @@ class NetworkConnectionInterceptor(private val context: Context): Interceptor {
 class NoConnectivityException : IOException() {
     override val message: String
         get() = "No Internet Connection"
+}
+
+class NoContentException : IOException() {
+    override val message: String
+        get() = "No Content Exception"
 }

@@ -9,6 +9,7 @@ import com.example.minijobchat.R
 import com.example.minijobchat.application.MainApplication
 import com.example.minijobchat.model.dto.User
 import com.example.minijobchat.ui.activity.MainActivity
+import com.example.minijobchat.ui.activity.home.HomeActivity
 import com.example.minijobchat.ui.activity.login.fragment.RegisterEmailFragment
 import com.example.minijobchat.ui.activity.login.fragment.RegisterPhoneNumberFragment
 import com.example.minijobchat.ui.activity.login.fragment.SubmitLoginFragment
@@ -77,9 +78,7 @@ class LoginActivity : BaseActivity(), LoginActivityFragment, LoginContract.View 
     }
 
     override fun onLoginSuccess() {
-        val intent = Intent(this, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
+        startActivity(HomeActivity.getInstance(this))
     }
 
     override fun onLoginFailed(message: String) {

@@ -1,11 +1,13 @@
 package com.example.minijobchat.model.dto
 
-import com.google.firebase.firestore.DocumentSnapshot
+import com.google.gson.annotations.SerializedName
 
 data class User(
-    var email: String = "",
-    var uid: String = "",
-    var displayName: String = "",
-    var photoUrl: String = "",
-    var phoneNumber: String = ""
+    @SerializedName("email") var email: String = "",
+    @SerializedName("uid") var uid: String = "",
+    @SerializedName("display_name") var displayName: String = "",
+    @SerializedName("photo_url") var photoUrl: String = "",
+    @SerializedName("phone_number") var phoneNumber: String = "",
+    @SerializedName("dob") var dateOfBirth: String = "",
+    @SerializedName("introduce") var introduce: String = ""
 )

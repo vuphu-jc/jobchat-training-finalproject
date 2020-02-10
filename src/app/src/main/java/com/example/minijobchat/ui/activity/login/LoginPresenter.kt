@@ -1,5 +1,8 @@
 package com.example.minijobchat.ui.activity.login
 
+import android.content.Context
+import android.widget.Toast
+import com.example.minijobchat.model.api.NoContentException
 import com.example.minijobchat.model.dto.User
 import com.example.minijobchat.model.repository.UserRepository
 import com.example.minijobchat.utils.StringUtils
@@ -15,37 +18,34 @@ import java.util.concurrent.TimeUnit
 
 
 class LoginPresenter: LoginContract.Presenter {
-    lateinit var mUserRepository: UserRepository
+    lateinit var userRepository: UserRepository
     private var mView: LoginContract.View? = null
     private var mFirebaseAuth = FirebaseAuth.getInstance()
     private val mCompositeDisposable = CompositeDisposable()
+
+    override fun attach(view: LoginContract.View) {
+        mView = view
+    }
 
     override fun detach() {
         mView = null
         mCompositeDisposable.clear()
     }
 
-    override fun attach(view: LoginContract.View) {
-        mView = view
-    }
-
     override fun submitUsername(userName: String) {
         mView?.showProgress()
-        var email = userName
-        if (StringUtils.isPhoneNumber(userName))
-            email = getEmail(userName)
-        val dispose = mUserRepository.findUserByUsername(email)
+        val dispose = userRepository.findUserByUsername(userName)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({user ->
-                if (user == null) {
-                    allowRegister(userName)
-                } else {
-                    mView?.allowLogin(user)
-                    mView?.hideProgress()
-                }
+                mView?.allowLogin(user)
+                mView?.hideProgress()
             }, {
                 mView?.hideProgress()
+                if (it is NoContentException) {
+                    allowRegister(userName)
+                } else
+                    mView?.onError(it.message)
             })
         mCompositeDisposable.add(dispose)
     }
@@ -78,23 +78,20 @@ class LoginPresenter: LoginContract.Presenter {
 
     override fun register(userName: String, password: String, displayName: String) {
         if (StringUtils.isEmail(userName)) {
-            val email = userName
-            register(User(email =  email, displayName =  displayName), password)
+            register(User(email = userName, displayName =  displayName), password)
         }
         else if (StringUtils.isPhoneNumber(userName)) {
-            val phoneNumber = userName
-            register(User(email = getEmail(phoneNumber),
+            register(User(email = getEmail(userName),
                 displayName =  displayName,
-                phoneNumber =  phoneNumber), password)
+                phoneNumber = userName
+            ), password)
         }
     }
 
     private fun register(userInformation: User, password: String) {
         mView?.showProgress()
-        val dispose= mUserRepository.register(
-            email = userInformation.email,
-            displayName =  userInformation.displayName,
-            phoneNumber =  userInformation.phoneNumber,
+        val dispose= userRepository.register(
+            userInformation,
             password = password)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())

@@ -1,5 +1,7 @@
 package com.example.minijobchat.ui.activity.home
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.minijobchat.R
@@ -19,6 +21,11 @@ class HomeActivity : AppCompatActivity() {
 
     companion object {
         private const val DURATION_ANIMATION: Long = 300
+        fun getInstance(context: Context): Intent {
+            val intent = Intent(context, HomeActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            return intent
+        }
     }
 
     private lateinit var mCustomTabLayout: CustomTabLayout

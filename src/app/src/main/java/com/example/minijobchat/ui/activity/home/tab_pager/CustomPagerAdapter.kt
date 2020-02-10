@@ -21,6 +21,6 @@ class CustomFragmentPagerAdapter
     }
 
     override fun getCount(): Int {
-        return 5
+        return fragments.size
     }
 }

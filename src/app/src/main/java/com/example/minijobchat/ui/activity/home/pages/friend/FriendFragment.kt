@@ -8,13 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.minijobchat.R
+import com.example.minijobchat.model.dto.User
 import com.example.minijobchat.ui.activity.add_friend.AddFriendActivity
+import com.example.minijobchat.ui.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_friend.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class FriendFragment : Fragment() {
+class FriendFragment : BaseFragment(), FriendContract.View {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,5 +31,14 @@ class FriendFragment : Fragment() {
         addFriendButton.setOnClickListener {
             startActivity(AddFriendActivity.getInstance(view.context))
         }
+    }
+
+    override fun onFindUserSuccess(user: User) {
+    }
+
+    override fun onNotFoundUser() {
+    }
+
+    override fun onMakeFriendSuccess() {
     }
 }

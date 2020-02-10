@@ -37,7 +37,7 @@ class RetrofitClient private constructor(){
         mRetrofit = Retrofit.Builder().baseUrl(apiURL)
             .client(
                 OkHttpClient.Builder()
-                .addInterceptor(NetworkConnectionInterceptor(sContext))
+                    .addInterceptor(NetworkConnectionInterceptor(sContext))
                 .build())
             .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
